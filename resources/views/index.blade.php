@@ -11,6 +11,9 @@
         </div> <br>
         <div class="col-6">
             <a href="{{ url('/index') }}" class="btn btn-xs btn-info pull-right">Through Database</a>
+        </div> <br>
+        <div class="col-6">
+            <a href="{{ url('/ajax') }}" class="btn btn-xs btn-info pull-right">Through Ajax</a>
         </div>
         </center>
     </div>

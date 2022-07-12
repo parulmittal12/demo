@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     { 
-        $parentEntries = TreeEntryLang::with('childRel')->get();  
+        $parentEntries = TreeEntryLang::with('parentRel')->get();  
  
         return view('index',[
             'parentEntries' => $parentEntries
@@ -36,5 +36,19 @@ class HomeController extends Controller
     public function home()
     { 
         return view('home');
+    }
+
+    public function ajaxRequest()
+    { 
+        $parentEntries = DB::table('tree_entry')
+                            ->join('tree_entry_lang as I', 'I.entry_id', '=', 'tree_entry.entry_id')
+                            ->orwhere('parent_entry_id',0)
+                            ->get();
+                      
+
+ //dd($parentEntries);
+        return view('ajax',[
+            'parentEntries' => $parentEntries
+        ]);
     }
 }

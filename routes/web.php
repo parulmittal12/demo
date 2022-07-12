@@ -22,6 +22,7 @@ use App\Http\Controllers\TodoController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/ajax', [App\Http\Controllers\HomeController::class, 'ajaxRequest'])->name('ajax');
 
 Route::group(['middleware' => 'auth'],function () {
     Route::resource('/todo',TodoController::class);
