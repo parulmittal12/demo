@@ -104,8 +104,6 @@ h2 {
 }
 
 .directory-list li.folder:before {
-  /* folder icon if folder class is specified */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='lightblue' d='M96.429,37.5v39.286c0,3.423-1.228,6.361-3.684,8.817c-2.455,2.455-5.395,3.683-8.816,3.683H16.071 c-3.423,0-6.362-1.228-8.817-3.683c-2.456-2.456-3.683-5.395-3.683-8.817V23.214c0-3.422,1.228-6.362,3.683-8.817 c2.455-2.456,5.394-3.683,8.817-3.683h17.857c3.422,0,6.362,1.228,8.817,3.683c2.455,2.455,3.683,5.395,3.683,8.817V25h37.5 c3.422,0,6.361,1.228,8.816,3.683C95.201,31.138,96.429,34.078,96.429,37.5z' /></svg>");
   background-position: center top;
   background-size: 75% auto;
 }
@@ -172,24 +170,14 @@ h2 {
         </main>
     </div>
     <script>
-        	// get all folders in our .directory-list
 	var allFolders = $(".directory-list li > ul");
-	allFolders.each(function() {
-
-	  // add the folder class to the parent <li>
+	  allFolders.each(function() {
 	  var folderAndName = $(this).parent();
 	  folderAndName.addClass("folder");
-
-	  // backup this inner <ul>
 	  var backupOfThisFolder = $(this);
-	  // then delete it
 	  $(this).remove();
-	  // add an <a> tag to whats left ie. the folder name
 	  folderAndName.wrapInner("<a href='#' />");
-	  // then put the inner <ul> back
 	  folderAndName.append(backupOfThisFolder);
-
-	  // now add a slideToggle to the <a> we just added
 	  folderAndName.find("a").click(function(e) {
 	    $(this).siblings("ul").slideToggle("slow");
 	    e.preventDefault();

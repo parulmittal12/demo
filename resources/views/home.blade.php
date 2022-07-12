@@ -3,54 +3,69 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-    <h2>Collapsible Directory List</h2>
+    <h2>Directory List</h2>
+    <div class="row">
+        <center>
+        <div class="col-6">
+            <a href="{{ url('/') }}" class="btn btn-xs btn-info pull-right">Collapsable Functionality</a>
+        </div> <br>
+        <div class="col-6">
+            <a href="{{ url('/index') }}" class="btn btn-xs btn-info pull-right">Through Database</a>
+        </div>
+        </center>
+    </div>
         <div class="box">
             <ul class="directory-list">
-                <li>assets
-                <ul>
-                    <li>css
+                <li>Test Project
                     <ul>
-                        <li>typography.css</li>
-                        <li>layout.css</li>
-                        <li>modules.css</li>
-                        <li>states.css</li>
-                        <li>theme.css</li>
+                        <li>Assemblies
+                            <ul>
+                                <li>Assembly1
+                                    <ul>
+                                        <li>Components
+                                            <ul>
+                                                <li>Component1</li>
+                                                <li>Component2</li>
+                                                <li>Component3</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Assembly2
+                                    <ul>
+                                        <li>Components
+                                            <ul>
+                                                <li>Component4</li>
+                                                <li>Component5</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Assembly3
+                                    <ul>
+                                        <li>Components
+                                            <ul>
+                                                <li>Component6</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Backgrounds
+                            <ul>
+                                <li>Cool Blue
+                                    <ul>
+                                        <li>Begie</li>
+                                        <li>Aqua</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Material sets</li>
+                       
                     </ul>
-                    </li>
-                    <li>js
-                    <ul>
-                        <li>custom.js</li>
-                        <li>jquery.js</li>
-                    </ul>
-                    </li>
-                    <li>images
-                    <ul>
-                        <li>logo.svg</li>
-                        <li>arrow-sprite.svg</li>
-                        <li>social-sprite.svg</li>
-                    </ul>
-                    </li>
-                    <li>functions.php</li>
-                </ul>
                 </li>
-                <li>templates
-                <ul>
-                    <li>pages
-                    <ul>
-                        <li>about.tpl</li>
-                        <li>pricing.tpl</li>
-                        <li>contact.tpl</li>
-                        <li>home.tpl</li>
-                        <li>features.tpl</li>
-                    </ul>
-                    </li>
-                    <li>header.tpl</li>
-                    <li>menu.tpl</li>
-                    <li>footer.tpl</li>
-                </ul>
-                </li>
-                <li>index.php</li>
-                <li>style.css</li>
             </ul>
         </div>
     </div>

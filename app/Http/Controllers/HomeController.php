@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\TreeEntryLang;
+use App\Models\TreeEntry;
 
 class HomeController extends Controller
 {
@@ -22,7 +25,16 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    { 
+        $parentEntries = TreeEntryLang::with('childRel')->get();  
+ 
+        return view('index',[
+            'parentEntries' => $parentEntries
+        ]);
+    }
+
+    public function home()
+    { 
         return view('home');
     }
 }
